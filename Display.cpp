@@ -1,5 +1,13 @@
 #include "Display.h"
 void Display::resizeList(std::vector<std::string>& list) {
+	std::vector<std::string> buf = dir.buffer.getFileNames();
+	std::vector<int> alloc;
+	//Распределяем итераторы для перекрашивания элементов выделенных в буфере
+	for (int i = 0; i < list.size(); i++) {
+		auto it = std::find(buf.begin(), buf.end(), list[i]);
+		if (it != buf.end())
+			alloc.push_back(i);
+	}
 	int needSize = box.width() -1; //Ширина текста помещающегося в бокс
 	//Подготавливаем размер строк
 	for (int i = 0; i < list.size(); i++) {
@@ -8,6 +16,19 @@ void Display::resizeList(std::vector<std::string>& list) {
 		else  if (list[i].size() > needSize)
 			list[i].resize(needSize);
 	}
+	bool curBuf = false;
+	//Раскрашиваем элементы в цвет буфера
+	for (int i : alloc) {
+		if (i != cur)
+			list[i] = cBuf.string() + list[i] + cBack.string();
+		else curBuf = true;
+	}
+	//Раскрашиваем выбранный элемент
+	if (curBuf) {
+		Color c(cCur.getBG(), cBuf.getFG());
+		list[cur] = c.string() + list[cur] + cBack.string();
+	}else
+		list[cur] = cCur.string() + list[cur] + cBack.string();
 }
 Display& Display::Draw() {
 	auto list = dir.getList(); //Лист необходимый для печати
@@ -15,8 +36,6 @@ Display& Display::Draw() {
 	int needSize = box.width() - 1; //Ширина текста помещающегося в бокс
 	Position x(box.getCurPoint());
 	resizeList(list);
-	//Раскрашиваем выбранный элемент
-	list[cur] = cCur.string() + list[cur] + cBack.string();
 	cBack.colorize();
 	//Выводим элементы на экран
 	int n = min(list.size(), pa); //Количество циклов

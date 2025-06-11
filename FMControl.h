@@ -1,11 +1,14 @@
 #pragma once
 #include "Display.h"
 #include "EnterBox.h"
+#include "InfoBox.h"
+#include "Paste.h"
 class FMControl
 {
 	Display dis1; //Окно 
 	Display dis2;//Окно 
 	Display* active; // Активное окно
+	Buffer buf; //Буффер обмена
 
 	/*Переключается между активными окнами TAB*/
 	FMControl& swichActive();
@@ -13,11 +16,23 @@ class FMControl
 	FMControl& Enter();
 	/*Переход на уровень выше BACKSPACE*/
 	FMControl& Up();
-	/*Создает папку F2*/
+	/*Создает папку F3*/
 	FMControl& newPage();
 	/*Обновляет после изменений или перехода в папке*/
 	FMControl& update();
-	/*Выводит информацию о горячих клавишах F1*/
+	/*Переименовывает текущий файл или папку F2*/
+	FMControl& rename();
+	/*Создает файл F4*/
+	FMControl& newFile();
+	/*Выделяет внутренний буфер SPACE*/
+	FMControl& collectFiles();
+	/**
+	 * @brief Помещает в буфер скопированные или вырезанные значения
+	 * @param del указывает будут ли удалены файлы после копирования
+	 */
+	FMControl& addBuffer(bool del);
+	/*вставляет содержимое буфера обьутв*/
+	FMControl& paste();
 public:
 	FMControl(): active(&dis1){
 		Position x;

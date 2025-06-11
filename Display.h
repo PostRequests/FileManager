@@ -13,12 +13,15 @@ private:
 	/** @brief Обрезает список до размера который войдет в строку */
 	void resizeList(std::vector<std::string>& v);
 public:
-	Color cBack;
-	Color cCur;
+	Color cBack; //Оновной цвет фона
+	Color cBuf; //Цвет выделенных в буфере элементов
+	Color cCur; //Цвет выделенного элемента
 	Dir dir;
 	Display(int x, int y, int x2, int y2, std::string path): box(x,y,x2,y2), 
 		cur(0), pi(0), pa(y2 - y - 4),papa(y2 - y - 4), dir(path) {
 		cCur.setColor(RedBG);
+		cBack.setColor(CyanFG);
+		cBuf.setColor(YellowFG);
 	}
 	Display(int x, int y, int x2, int y2) : Display(x, y, x2, y2,"c:\\" ) {	}
 	Display(){

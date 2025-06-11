@@ -126,11 +126,12 @@
   <ItemGroup>
     <ClCompile Include="Buffer.cpp" />
     <ClCompile Include="CreateDir.cpp" />
-    <ClCompile Include="DeleteFile.cpp" />
+    <ClCompile Include="DeleteFiles.cpp" />
     <ClCompile Include="Dir.cpp" />
     <ClCompile Include="Display.cpp" />
     <ClCompile Include="EnterBox.cpp" />
     <ClCompile Include="FMControl.cpp" />
+    <ClCompile Include="InfoBox.cpp" />
     <ClCompile Include="InfoFile.cpp" />
     <ClCompile Include="Lib\Box\Box.cpp" />
     <ClCompile Include="Lib\Color\Color.cpp" />
@@ -144,11 +145,12 @@
   <ItemGroup>
     <ClInclude Include="Buffer.h" />
     <ClInclude Include="CreateDir.h" />
-    <ClInclude Include="DeleteFile.h" />
+    <ClInclude Include="DeleteFiles.h" />
     <ClInclude Include="Dir.h" />
     <ClInclude Include="Display.h" />
     <ClInclude Include="EnterBox.h" />
     <ClInclude Include="FMControl.h" />
+    <ClInclude Include="InfoBox.h" />
     <ClInclude Include="InfoFile.h" />
     <ClInclude Include="Lib\Box\Box.h" />
     <ClInclude Include="Lib\Color\Color.h" />

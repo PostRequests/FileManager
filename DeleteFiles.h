@@ -1,9 +1,9 @@
 #pragma once
 #include "Buffer.h"
 #include "MessageBoxInfo.h"
-class DeleteFile
+class DeleteFil
 {
 public:
-	void deleteList(std::vector<fs::path>& list);
+	void deleteList(const std::set<fs::path>& list);
 };
 

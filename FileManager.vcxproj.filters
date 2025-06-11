@@ -60,7 +60,7 @@
     <ClCompile Include="Paste.cpp">
       <Filter>Исходные файлы\Buffer</Filter>
     </ClCompile>
-    <ClCompile Include="DeleteFile.cpp">
+    <ClCompile Include="DeleteFiles.cpp">
       <Filter>Исходные файлы\Buffer</Filter>
     </ClCompile>
     <ClCompile Include="Dir.cpp">
@@ -82,6 +82,9 @@
       <Filter>Исходные файлы\Dir</Filter>
     </ClCompile>
     <ClCompile Include="MessageBoxChoice.cpp">
+      <Filter>Исходные файлы\MessageBox</Filter>
+    </ClCompile>
+    <ClCompile Include="InfoBox.cpp">
       <Filter>Исходные файлы\MessageBox</Filter>
     </ClCompile>
   </ItemGroup>
@@ -107,7 +110,7 @@
     <ClInclude Include="Paste.h">
       <Filter>Исходные файлы\Buffer</Filter>
     </ClInclude>
-    <ClInclude Include="DeleteFile.h">
+    <ClInclude Include="DeleteFiles.h">
       <Filter>Исходные файлы\Buffer</Filter>
     </ClInclude>
     <ClInclude Include="Dir.h">
@@ -129,6 +132,9 @@
       <Filter>Исходные файлы\Dir</Filter>
     </ClInclude>
     <ClInclude Include="MessageBoxChoice.h">
+      <Filter>Исходные файлы\MessageBox</Filter>
+    </ClInclude>
+    <ClInclude Include="InfoBox.h">
       <Filter>Исходные файлы\MessageBox</Filter>
     </ClInclude>
   </ItemGroup>

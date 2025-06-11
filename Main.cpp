@@ -3,6 +3,7 @@
 #include "FMControl.h"
 #include <Windows.h>
 #include "EnterBox.h"
+#include "InfoBox.h"
 int main()
 {
     
@@ -11,7 +12,7 @@ int main()
         int key = _getch();
         if (key == 0 || key == 0xE0) 
             key = _getch();
-        std::cout << key;
+        std::cout << key << " ";
     }*/
     system("chcp 1251>nul");
     FMControl a;

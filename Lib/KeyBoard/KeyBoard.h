@@ -20,7 +20,12 @@ enum class KEY {
     F5,
     F6,
     F7,
-    BACKSPACE
+    BACKSPACE,
+    SPACE,
+    C,
+    X,
+    V,
+    DEL
 };
 
 class KeyBoard
