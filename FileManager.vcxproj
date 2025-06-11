@@ -125,6 +125,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Buffer.cpp" />
+    <ClCompile Include="ChangeGisk.cpp" />
     <ClCompile Include="CreateDir.cpp" />
     <ClCompile Include="DeleteFiles.cpp" />
     <ClCompile Include="Dir.cpp" />
@@ -138,14 +139,18 @@
     <ClCompile Include="Lib\Box\Box.cpp" />
     <ClCompile Include="Lib\Color\Color.cpp" />
     <ClCompile Include="Lib\KeyBoard\KeyBoard.cpp" />
+    <ClCompile Include="Lib\Menu\ItemM.cpp" />
+    <ClCompile Include="Lib\Menu\Menu.cpp" />
+    <ClCompile Include="Lib\Menu\MenuItem.cpp" />
     <ClCompile Include="Lib\Position\Position.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MessageBoxChoice.cpp" />
-    <ClCompile Include="MessageBoxInfo.cpp" />
+    <ClCompile Include="MessBoxInfo.cpp" />
     <ClCompile Include="Paste.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Buffer.h" />
+    <ClInclude Include="ChangeGisk.h" />
     <ClInclude Include="CreateDir.h" />
     <ClInclude Include="DeleteFiles.h" />
     <ClInclude Include="Dir.h" />
@@ -159,9 +164,12 @@
     <ClInclude Include="Lib\Box\Box.h" />
     <ClInclude Include="Lib\Color\Color.h" />
     <ClInclude Include="Lib\KeyBoard\KeyBoard.h" />
+    <ClInclude Include="Lib\Menu\ItemM.h" />
+    <ClInclude Include="Lib\Menu\Menu.h" />
+    <ClInclude Include="Lib\Menu\MenuItem.h" />
     <ClInclude Include="Lib\Position\Position.h" />
     <ClInclude Include="MessageBoxChoice.h" />
-    <ClInclude Include="MessageBoxInfo.h" />
+    <ClInclude Include="MessBoxInfo.h" />
     <ClInclude Include="Paste.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

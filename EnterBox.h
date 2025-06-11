@@ -1,5 +1,5 @@
 #pragma once
-#include "MessageBoxInfo.h"
+#include "MessBoxInfo.h"
 class EnterBox
 {
 private:

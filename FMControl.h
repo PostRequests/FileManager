@@ -6,6 +6,7 @@
 #include "DeleteFiles.h"
 #include "FileOpen.h"
 #include "MessageBoxChoice.h"
+#include "ChangeGisk.h"
 class FMControl
 {
 	Display dis1; //Окно 
@@ -40,6 +41,10 @@ class FMControl
 	FMControl& delActiveBuf();
 	/*Переход в папку по прямой ссылке*/
 	FMControl& goTo();
+	/*Выход из программы, предварительно спрашивает*/
+	void exitFM();
+	/*Изменить корневой диск*/
+	FMControl& changeDisk();
 public:
 	FMControl(): active(&dis1){
 		Position x;

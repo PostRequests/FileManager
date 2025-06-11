@@ -1,6 +1,6 @@
 #pragma once
 #include "Buffer.h"
-#include "MessageBoxInfo.h"
+#include "MessBoxInfo.h"
 class DeleteFil
 {
 public:

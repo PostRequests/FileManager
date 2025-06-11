@@ -1,5 +1,5 @@
-#include "MessageBoxInfo.h"
-void MessageBoxInfo::show() {
+#include "MessBoxInfo.h"
+void MessBoxInfo::show() {
 	Position winSize; //Создаем позицию размера окна
 	winSize.setConsoleSize(); //Присваиваем значения размера окна
 	Position sBox(winSize.getX() / 4, 

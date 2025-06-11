@@ -3,11 +3,11 @@
 #include "FMControl.h"
 #include <Windows.h>
 #include "EnterBox.h"
+#include "ChangeGisk.h"
 #include "InfoBox.h"
 int main()
 {
-    
-    
+   
    /* while (true)
     {
         int key = _getch();

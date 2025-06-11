@@ -1,6 +1,6 @@
 #include "FMControl.h"
 #include "Lib/KeyBoard/KeyBoard.h"
-#include "MessageBoxInfo.h"
+#include "MessBoxInfo.h"
 FMControl& FMControl::swichActive() {
     active = (active == &dis1) ? &dis2 : &dis1;
     Display* passive = (active == &dis1) ? &dis2 : &dis1;
@@ -32,12 +32,12 @@ FMControl& FMControl::Enter() {
     }
     catch (...) {
         active->dir.change(curPath);
-        MessageBoxInfo mes ("В доступе отказано!");
+        MessBoxInfo mes ("В доступе отказано!");
         mes.show();
     }
     if (change) {
         active->reset();
-        draw();
+        active->Draw();
     }
     return *this;
 }
@@ -47,10 +47,11 @@ FMControl& FMControl::Up() {
          active->dir.change(path);
     }
     catch (...) {
-        MessageBoxInfo mes ("В доступе отказано!");
+        MessBoxInfo mes ("В доступе отказано!");
         mes.show();
+        update();
     }
-    update();
+    active->Draw();
     return *this;
 }
 void FMControl::run() {
@@ -75,6 +76,8 @@ void FMControl::run() {
         case KEY::V: paste(); break;
         case KEY::DEL: delActiveBuf(); break;
         case KEY::F6: goTo(); break;
+        case KEY::F7: changeDisk(); break;
+        case KEY::ESCAPE: exitFM(); break;
         }
     } while (true);
     
@@ -88,7 +91,7 @@ FMControl& FMControl::newPage() {
         fs::create_directory(dirPath);
     }
     else {
-        MessageBoxInfo box2("Папка уже существует");
+        MessBoxInfo box2("Папка уже существует");
         box2.show();
     }
     update();
@@ -118,7 +121,7 @@ FMControl& FMControl::newFile() {
         std::ofstream file(filePath);
     }
     else {
-        MessageBoxInfo box2("Файл уже существует");
+        MessBoxInfo box2("Файл уже существует");
         box2.show();
     }
     update();
@@ -151,11 +154,11 @@ FMControl& FMControl::paste() {
     return *this;
 }
 FMControl& FMControl::delActiveBuf() {
-   /* MessageBoxChoice cho("Уверенны что хотите удалить?");
+    MessageBoxChoice cho("Уверенны что хотите удалить?");
     if (cho.get()) {
         DeleteFil p;
         p.deleteList(active->dir.buffer.getPaths());
-    }*/
+    }
     active->dir.buffer.clear();
     active->dir.fill();
     draw();
@@ -165,6 +168,18 @@ FMControl& FMControl::goTo() {
     EnterBox x;
     std::string path = x.getString();
     active->dir.change(path);
+    draw();
+    return *this;
+}
+void FMControl::exitFM() {
+    MessageBoxChoice cho("Вы точно хотите выйти?");
+    if (cho.get())
+        exit(0);
+    draw();
+}
+FMControl& FMControl::changeDisk() {
+    ChangeDisk disc;
+    active->dir.change(disc.disc());
     draw();
     return *this;
 }
