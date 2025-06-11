@@ -87,6 +87,12 @@
     <ClCompile Include="InfoBox.cpp">
       <Filter>Исходные файлы\MessageBox</Filter>
     </ClCompile>
+    <ClCompile Include="FileOpen.cpp">
+      <Filter>Исходные файлы\Dir</Filter>
+    </ClCompile>
+    <ClCompile Include="DownBoard.cpp">
+      <Filter>Исходные файлы\Dir</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Lib\Box\Box.h">
@@ -136,6 +142,12 @@
     </ClInclude>
     <ClInclude Include="InfoBox.h">
       <Filter>Исходные файлы\MessageBox</Filter>
+    </ClInclude>
+    <ClInclude Include="FileOpen.h">
+      <Filter>Исходные файлы\Dir</Filter>
+    </ClInclude>
+    <ClInclude Include="DownBoard.h">
+      <Filter>Исходные файлы\Dir</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

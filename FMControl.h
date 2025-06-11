@@ -3,12 +3,14 @@
 #include "EnterBox.h"
 #include "InfoBox.h"
 #include "Paste.h"
+#include "DeleteFiles.h"
+#include "FileOpen.h"
 class FMControl
 {
 	Display dis1; //Окно 
 	Display dis2;//Окно 
 	Display* active; // Активное окно
-	Buffer buf; //Буффер обмена
+	Buffer buf; //Буфер обмена
 
 	/*Переключается между активными окнами TAB*/
 	FMControl& swichActive();
@@ -31,14 +33,16 @@ class FMControl
 	 * @param del указывает будут ли удалены файлы после копирования
 	 */
 	FMControl& addBuffer(bool del);
-	/*вставляет содержимое буфера обьутв*/
+	/*вставляет содержимое буфера */
 	FMControl& paste();
+	/*Удаляет файлы которые в данное время выбраны в активном окне*/
+	FMControl& delActiveBuf();
 public:
 	FMControl(): active(&dis1){
 		Position x;
 		x.setConsoleSize();
-		dis1 = Display(1, 1, x.getX() / 2, x.getY() - 2);
-		dis2 = Display(x.getX() / 2 + 1, 1, x.getX(), x.getY() - 2);
+		dis1 = Display(1, 1, x.getX() / 2, x.getY() - 1);
+		dis2 = Display(x.getX() / 2 + 1, 1, x.getX(), x.getY() - 1);
 		dis2.cCur = Color(BlackBG);
 	}
 	/*Запуск управления файловым менеджером*/

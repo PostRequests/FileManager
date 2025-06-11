@@ -7,7 +7,7 @@
 int main()
 {
     
-    /*while (true)
+   /* while (true)
     {
         int key = _getch();
         if (key == 0 || key == 0xE0) 

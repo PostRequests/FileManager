@@ -57,6 +57,7 @@ Display& Display::Draw() {
 }
 Display& Display::DrawBorder() {
 	box.drawBox();
+	
 	return *this;
 }
 Display& Display::reDraw() {
@@ -67,6 +68,7 @@ Display& Display::reDraw() {
 	box.drawBox();
 	x.printLn(path);
 	Draw();
+	
 	return *this;
 }
 Display& Display::up() {

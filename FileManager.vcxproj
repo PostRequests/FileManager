@@ -129,7 +129,9 @@
     <ClCompile Include="DeleteFiles.cpp" />
     <ClCompile Include="Dir.cpp" />
     <ClCompile Include="Display.cpp" />
+    <ClCompile Include="DownBoard.cpp" />
     <ClCompile Include="EnterBox.cpp" />
+    <ClCompile Include="FileOpen.cpp" />
     <ClCompile Include="FMControl.cpp" />
     <ClCompile Include="InfoBox.cpp" />
     <ClCompile Include="InfoFile.cpp" />
@@ -148,7 +150,9 @@
     <ClInclude Include="DeleteFiles.h" />
     <ClInclude Include="Dir.h" />
     <ClInclude Include="Display.h" />
+    <ClInclude Include="DownBoard.h" />
     <ClInclude Include="EnterBox.h" />
+    <ClInclude Include="FileOpen.h" />
     <ClInclude Include="FMControl.h" />
     <ClInclude Include="InfoBox.h" />
     <ClInclude Include="InfoFile.h" />

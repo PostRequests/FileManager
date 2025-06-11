@@ -13,6 +13,7 @@ FMControl& FMControl::swichActive() {
 FMControl& FMControl::draw() {
     dis1.reDraw();  
     dis2.reDraw();
+    DownBoard::printDownBoard();
     return* this;
 }
 FMControl& FMControl::Enter() {
@@ -24,6 +25,9 @@ FMControl& FMControl::Enter() {
         if (fs::is_directory(newPath)) {
             active->dir.change(newPath);
             change = true;
+        }
+        else if (fs::is_regular_file(newPath)) {
+            FileOpen::open(newPath);
         }
     }
     catch (...) {
@@ -69,6 +73,7 @@ void FMControl::run() {
         case KEY::C: addBuffer(false); break;
         case KEY::X: addBuffer(true); break;
         case KEY::V: paste(); break;
+        case KEY::DEL: delActiveBuf(); break;
         }
     } while (true);
     
@@ -136,7 +141,19 @@ FMControl& FMControl::paste() {
     if (!buf.getPaths().size()) return *this; //Если буфер пустой ничего не выполняем
     Paste p(active->dir.getPath());
     p.paste(buf.getPaths());
+    if (buf.getFlag()) {
+        DeleteFil p;
+        p.deleteList(buf.getPaths());
+    }
     buf.clear();
     update();
+    return *this;
+}
+FMControl& FMControl::delActiveBuf() {
+    DeleteFil p;
+    p.deleteList(active->dir.buffer.getPaths());
+    active->dir.buffer.clear();
+    active->dir.fill();
+    draw();
     return *this;
 }

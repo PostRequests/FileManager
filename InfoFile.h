@@ -12,5 +12,6 @@ public:
 
 	std::string size();
 	std::string who();
+
 };
 

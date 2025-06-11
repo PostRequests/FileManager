@@ -4,6 +4,24 @@ class InfoBox
 {
 	Box x;
 	std::string text;
+	std::vector<std::string> KeyInfo{
+		"F1: Показать справку ",
+		"F2: Переименовать  ",
+		"TAB: Переключить активное окно ",
+		"C: Скопировать ",
+		"X: Вырезать ",
+		"V: Вставить ",
+		"F3: Создать папку ",
+		"F4: Создать файл ",
+		"F5: Обновить ",
+		"DEL: Удалить ",
+		"DOWN: Переместить вниз ",
+		"UP: Переместить вверх ",
+		"ENTER: Выбрать ",
+		"BACKSPACE: На уровень выше ",
+		"SPACE: (выделить/снять выделение) ",
+
+	};
 public:
 	InfoBox()
 	{
@@ -16,6 +34,10 @@ public:
 			;
 		show();
 	}
+	InfoBox(bool) {}
 	void show();
+	inline std::vector<std::string> GetKeyInfo() const {
+		return KeyInfo;
+	}
 };
 

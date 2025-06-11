@@ -2,6 +2,7 @@
 #include "Dir.h"
 #include "Lib/Box/Box.h"
 #include "InfoFile.h"
+#include "DownBoard.h"
 class Display
 {
 private:
