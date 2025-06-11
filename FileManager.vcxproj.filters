@@ -81,9 +81,6 @@
     <ClCompile Include="EnterBox.cpp">
       <Filter>Исходные файлы\MessageBox</Filter>
     </ClCompile>
-    <ClCompile Include="CreateDir.cpp">
-      <Filter>Исходные файлы\Dir</Filter>
-    </ClCompile>
     <ClCompile Include="MessageBoxChoice.cpp">
       <Filter>Исходные файлы\MessageBox</Filter>
     </ClCompile>
@@ -95,9 +92,6 @@
     </ClCompile>
     <ClCompile Include="DownBoard.cpp">
       <Filter>Исходные файлы\Dir</Filter>
-    </ClCompile>
-    <ClCompile Include="Lib\Menu\ItemM.cpp">
-      <Filter>Исходные файлы\Menu</Filter>
     </ClCompile>
     <ClCompile Include="Lib\Menu\Menu.cpp">
       <Filter>Исходные файлы\Menu</Filter>
@@ -149,9 +143,6 @@
     <ClInclude Include="EnterBox.h">
       <Filter>Исходные файлы\MessageBox</Filter>
     </ClInclude>
-    <ClInclude Include="CreateDir.h">
-      <Filter>Исходные файлы\Dir</Filter>
-    </ClInclude>
     <ClInclude Include="MessageBoxChoice.h">
       <Filter>Исходные файлы\MessageBox</Filter>
     </ClInclude>
@@ -163,9 +154,6 @@
     </ClInclude>
     <ClInclude Include="DownBoard.h">
       <Filter>Исходные файлы\Dir</Filter>
-    </ClInclude>
-    <ClInclude Include="Lib\Menu\ItemM.h">
-      <Filter>Исходные файлы\Menu</Filter>
     </ClInclude>
     <ClInclude Include="Lib\Menu\Menu.h">
       <Filter>Исходные файлы\Menu</Filter>
