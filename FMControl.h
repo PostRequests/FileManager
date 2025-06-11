@@ -5,6 +5,7 @@
 #include "Paste.h"
 #include "DeleteFiles.h"
 #include "FileOpen.h"
+#include "MessageBoxChoice.h"
 class FMControl
 {
 	Display dis1; //Окно 
@@ -37,6 +38,8 @@ class FMControl
 	FMControl& paste();
 	/*Удаляет файлы которые в данное время выбраны в активном окне*/
 	FMControl& delActiveBuf();
+	/*Переход в папку по прямой ссылке*/
+	FMControl& goTo();
 public:
 	FMControl(): active(&dis1){
 		Position x;

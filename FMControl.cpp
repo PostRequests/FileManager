@@ -74,6 +74,7 @@ void FMControl::run() {
         case KEY::X: addBuffer(true); break;
         case KEY::V: paste(); break;
         case KEY::DEL: delActiveBuf(); break;
+        case KEY::F6: goTo(); break;
         }
     } while (true);
     
@@ -150,10 +151,20 @@ FMControl& FMControl::paste() {
     return *this;
 }
 FMControl& FMControl::delActiveBuf() {
-    DeleteFil p;
-    p.deleteList(active->dir.buffer.getPaths());
+   /* MessageBoxChoice cho("Уверенны что хотите удалить?");
+    if (cho.get()) {
+        DeleteFil p;
+        p.deleteList(active->dir.buffer.getPaths());
+    }*/
     active->dir.buffer.clear();
     active->dir.fill();
+    draw();
+    return *this;
+}
+FMControl& FMControl::goTo() {
+    EnterBox x;
+    std::string path = x.getString();
+    active->dir.change(path);
     draw();
     return *this;
 }

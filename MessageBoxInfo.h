@@ -1,6 +1,5 @@
 #pragma once
 #include "Lib/Box/Box.h"
-#include "Lib/Position/Position.h"
 #include "FMControl.h"
 class MessageBoxInfo
 {
