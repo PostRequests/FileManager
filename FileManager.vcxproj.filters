@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Исходные файлы">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Файлы ресурсов">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Исходные файлы\Box">
+      <UniqueIdentifier>{d2b9f217-a5d7-45ec-bd53-7b4c2f64e8b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Color">
+      <UniqueIdentifier>{4561977f-59eb-4a9b-a908-8343f5fad55d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\KeyBoard">
+      <UniqueIdentifier>{2454db86-7a38-41ed-915f-37a9b2d0b989}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Position">
+      <UniqueIdentifier>{36820221-0ea6-42b5-84c6-37e6f6c99e43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Buffer">
+      <UniqueIdentifier>{22cc1214-c6d8-4c62-90e5-50e1887070cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Dir">
+      <UniqueIdentifier>{19a03e9a-7019-46ae-b838-619f69ff23b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\MessageBox">
+      <UniqueIdentifier>{1d00cb4c-1c48-495f-9bf1-e0821c0da273}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Box\Box.cpp">
+      <Filter>Исходные файлы\Box</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Color\Color.cpp">
+      <Filter>Исходные файлы\Color</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\KeyBoard\KeyBoard.cpp">
+      <Filter>Исходные файлы\KeyBoard</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Position\Position.cpp">
+      <Filter>Исходные файлы\Position</Filter>
+    </ClCompile>
+    <ClCompile Include="MessageBoxInfo.cpp">
+      <Filter>Исходные файлы\MessageBox</Filter>
+    </ClCompile>
+    <ClCompile Include="Buffer.cpp">
+      <Filter>Исходные файлы\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="Paste.cpp">
+      <Filter>Исходные файлы\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="DeleteFile.cpp">
+      <Filter>Исходные файлы\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="Dir.cpp">
+      <Filter>Исходные файлы\Dir</Filter>
+    </ClCompile>
+    <ClCompile Include="Display.cpp">
+      <Filter>Исходные файлы\Dir</Filter>
+    </ClCompile>
+    <ClCompile Include="FMControl.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="InfoFile.cpp">
+      <Filter>Исходные файлы\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="EnterBox.cpp">
+      <Filter>Исходные файлы\MessageBox</Filter>
+    </ClCompile>
+    <ClCompile Include="CreateDir.cpp">
+      <Filter>Исходные файлы\Dir</Filter>
+    </ClCompile>
+    <ClCompile Include="MessageBoxChoice.cpp">
+      <Filter>Исходные файлы\MessageBox</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Lib\Box\Box.h">
+      <Filter>Исходные файлы\Box</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Color\Color.h">
+      <Filter>Исходные файлы\Color</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\KeyBoard\KeyBoard.h">
+      <Filter>Исходные файлы\KeyBoard</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Position\Position.h">
+      <Filter>Исходные файлы\Position</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageBoxInfo.h">
+      <Filter>Исходные файлы\MessageBox</Filter>
+    </ClInclude>
+    <ClInclude Include="Buffer.h">
+      <Filter>Исходные файлы\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="Paste.h">
+      <Filter>Исходные файлы\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="DeleteFile.h">
+      <Filter>Исходные файлы\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="Dir.h">
+      <Filter>Исходные файлы\Dir</Filter>
+    </ClInclude>
+    <ClInclude Include="Display.h">
+      <Filter>Исходные файлы\Dir</Filter>
+    </ClInclude>
+    <ClInclude Include="FMControl.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="InfoFile.h">
+      <Filter>Исходные файлы\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="EnterBox.h">
+      <Filter>Исходные файлы\MessageBox</Filter>
+    </ClInclude>
+    <ClInclude Include="CreateDir.h">
+      <Filter>Исходные файлы\Dir</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageBoxChoice.h">
+      <Filter>Исходные файлы\MessageBox</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
