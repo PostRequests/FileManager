@@ -1,4 +1,25 @@
 #include "Display.h"
+Display& Display::DrawPath() {
+	cBack.reset();
+	int needSize = box.width() - 1; //Ширина текста помещающегося в бокс
+	Position pos(box.getCurPoint()); //Устанавливаем точку на верхнем бордюре
+	pos.prevLine();
+	std::string path = dir.getPath(); //Текущий путь
+	path.resize(needSize); //Обрезаем размер текста, чтоб не вылазил за пределы экрана
+	system("chcp 866>nul");
+	pos.go();
+	std::cout << std::string(needSize, Board_H2);
+	system("chcp 1251>nul");
+	pos.printLn(path); //Выводим текст текущего пути
+	return *this;
+}
+void Display::reset() {
+	cur = 0;
+	pi = 0;
+	pa = papa;
+	dir.fill();
+	Draw();
+}
 void Display::resizeList(std::vector<std::string>& list) {
 	std::vector<std::string> buf = dir.buffer.getFileNames();
 	std::vector<int> alloc;
@@ -32,7 +53,10 @@ void Display::resizeList(std::vector<std::string>& list) {
 }
 Display& Display::Draw() {
 	auto list = dir.getList(); //Лист необходимый для печати
-	if (!list.size()) return *this;
+	if (!list.size()) {
+		box.drawFillBox();
+		return *this;
+	} 
 	int needSize = box.width() - 1; //Ширина текста помещающегося в бокс
 	Position x(box.getCurPoint());
 	resizeList(list);
@@ -61,19 +85,15 @@ Display& Display::DrawBorder() {
 	return *this;
 }
 Display& Display::reDraw() {
-	int needSize = box.width() - 1; //Ширина текста помещающегося в бокс
-	Position x(box.getCurPoint().prevLine());
-	std::string path = dir.getPath();
-	path.resize(needSize);
-	box.drawBox();
-	x.printLn(path);
-	Draw();
+	box.drawBox(); //Отрисовываем рамку
+	DrawPath();
+	Draw(); //Перерисовываем все элементы
 	
 	return *this;
 }
 Display& Display::up() {
-	bool change = false;
-	if (cur != 0){
+	bool change = false; //Флаг наличия изменений
+	if (cur > 0){
 		change = true;
 		cur--;
 		if (pi > cur) {
@@ -85,8 +105,8 @@ Display& Display::up() {
 	return *this;
 }
 Display& Display::down() {
-	bool change = false;
-	if (cur != dir.size() - 1) {
+	bool change = false;//Флаг наличия изменений
+	if (cur < dir.size() - 1 ) {
 		change = true;
 		cur++;
 		if (pa < cur + 1) {

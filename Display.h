@@ -29,6 +29,9 @@ private:
 	Box box; //Тупо чтоб нарисовать квадрат
 	/** @brief Обрезает список до размера который войдет в строку */
 	void resizeList(std::vector<std::string>& v);
+	/*Рисует прямоугольную границу*/
+	Display& DrawBorder();
+	
 public:
 	Color cBack; //Оновной цвет фона
 	Color cBuf; //Цвет выделенных в буфере элементов
@@ -46,8 +49,8 @@ public:
 		dis.setConsoleSize();
 		*this = Display(1, 1, dis.getX(), dis.getY(), fs::current_path().string() );
 	}
-	/*Рисует прямоугольную границу*/
-	Display& DrawBorder();
+	/*Рисует путь к файлу*/
+	Display& DrawPath();
 	/*Выводит элементы внутри границ*/
 	Display& Draw();
 	/*Полностью перерисовывает все, считая границы*/
@@ -56,10 +59,8 @@ public:
 	Display& up();
 	/*Действия при нажатии клавиши вниз*/
 	Display& down();
-	void reset() { cur = 0; 
-	pi = 0;
-	pa = papa;
-	}
+	/*Сбрасывает контрольные точки cur pi pa*/
+	void reset();
 	/*Возвращает имя текущего файла (string)*/
 	inline std::string GetCur() {return dir.getList()[cur];	}
 	/*Возвращает путь к файлу целиком с названием файла*/

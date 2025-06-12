@@ -23,9 +23,10 @@ KEY KeyBoard::getKey() {
     case 65:  return KEY::F7;
     case 32:  return KEY::SPACE;
     case 83:  return KEY::DEL;
-    case 99:case 67: case 225: case 145: return KEY::C;
-    case 120:case 88: case 231: case 151: return KEY::X;
-    case 118:case 86: case 172: case 140: return KEY::V;
+    case 99:case 67: case 241: case 209: return KEY::C;
+    case 120:case 88: case 247: case 215: return KEY::X;
+    case 118:case 86: case 236: case 204: return KEY::V;
+        
     default: return KEY::ANY;
     }
 }

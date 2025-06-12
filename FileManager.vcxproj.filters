@@ -69,9 +69,6 @@
     <ClCompile Include="Dir.cpp">
       <Filter>Исходные файлы\Dir</Filter>
     </ClCompile>
-    <ClCompile Include="Display.cpp">
-      <Filter>Исходные файлы\Dir</Filter>
-    </ClCompile>
     <ClCompile Include="FMControl.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
@@ -102,6 +99,9 @@
     <ClCompile Include="ChangeGisk.cpp">
       <Filter>Исходные файлы\Dir</Filter>
     </ClCompile>
+    <ClCompile Include="Display.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Lib\Box\Box.h">
@@ -129,9 +129,6 @@
       <Filter>Исходные файлы\Buffer</Filter>
     </ClInclude>
     <ClInclude Include="Dir.h">
-      <Filter>Исходные файлы\Dir</Filter>
-    </ClInclude>
-    <ClInclude Include="Display.h">
       <Filter>Исходные файлы\Dir</Filter>
     </ClInclude>
     <ClInclude Include="FMControl.h">
@@ -163,6 +160,9 @@
     </ClInclude>
     <ClInclude Include="ChangeGisk.h">
       <Filter>Исходные файлы\Dir</Filter>
+    </ClInclude>
+    <ClInclude Include="Display.h">
+      <Filter>Исходные файлы</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

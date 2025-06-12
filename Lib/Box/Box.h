@@ -123,6 +123,7 @@ public:
 	 * @param ye Позиция Y нижней правой точки
 	 */
 	static void drawFillBox(int xs, int ys, int xe, int ye);
+	inline void drawFillBox() { drawFillBox(start.getX() + 1, start.getY() + 1, end.getX() - 1, end.getY() - 1); };
 	/**
 	 * @brief Рисует сплошной квадрат в заданном диапазоне
 	 * @param s Позиция верхней левой точки

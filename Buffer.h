@@ -58,5 +58,6 @@ public:
 	inline void setFlag(bool in) { thenDelete = in; }
 	/*Получает значения флага удаления*/
 	inline bool getFlag() { return thenDelete; }
+	int size() { return list.size(); }
 };
 
