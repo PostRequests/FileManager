@@ -62,7 +62,7 @@ public:
 	/*Сбрасывает контрольные точки cur pi pa*/
 	void reset();
 	/*Возвращает имя текущего файла (string)*/
-	inline std::string GetCur() {return dir.getList()[cur];	}
+	inline std::string GetRegularFile() {return dir.getList()[cur];	}
 	/*Возвращает путь к файлу целиком с названием файла*/
 	fs::path GetFullPathElement();
 };

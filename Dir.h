@@ -16,19 +16,23 @@
 #pragma once
 #include <iostream>
 #include <filesystem>
+#include <algorithm>
 #include <string>
 #include <conio.h>
 #include <vector>
 #include <fstream>
 #include "Buffer.h"
+#include <map>
 namespace fs = std::filesystem;
 class Dir
 {
 private:
 	fs::path path;
-	std::vector<std::string> list;
+	std::map<std::string, fs::path> list;
+	bool blockedPaste = false;
 	
 public:
+	
 	Buffer buffer;
 	Dir(): path(fs::current_path()) , buffer(){ fill(); }
 	Dir(std::string path): buffer() {
@@ -45,10 +49,19 @@ public:
 	inline Dir& change(const fs::path& path) { return change(path.string()); };
 	/*Возвращает текущий путь в формате string*/
 	inline std::string getPath() { return path.string(); }
+	/*возвращает путь к файлу*/
+	inline fs::path filePath(std::string n) { return list[n]; }
 	/*Возвращает список файлов текущего пути*/
-	inline std::vector<std::string> getList() { return list; }
+	std::vector<std::string> getList();
 	/*Возвращает количество элементов текущего пути*/
 	inline int size() { return list.size(); }
+	/*Заполняет мап элементами*/
 	Dir& fill();
+	/*Проверяем, находиться ли директория в заблокированном пространстве от вставки*/
+	inline bool isBlock() { return blockedPaste; }
+	/*Блокируем при переходе в виртуальную папку*/
+	inline void block() { blockedPaste = true; }
+	/*Разблокируем в нормальное состояние*/
+	inline void unlock() { blockedPaste = true; }
 };
 

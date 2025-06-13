@@ -49,7 +49,7 @@ FMControl& FMControl::Enter() {
         return *this;
     bool change = false;
     fs::path curPath (active->dir.getPath() );
-    fs::path curElem = active->GetCur();
+    fs::path curElem = active->GetRegularFile();
     fs::path newPath = ( curPath / curElem);
     try {
         if (fs::is_directory(newPath)) {
@@ -72,7 +72,13 @@ FMControl& FMControl::Enter() {
     return *this;
 }
 FMControl& FMControl::Up() {
-    fs::path path = fs::path(active->dir.getPath()).parent_path() ;
+    fs::path path;
+    if (active->dir.isBlock()) {
+        active->dir.unlock();
+        path = fs::path(active->dir.getPath());
+    }
+    else 
+        path = fs::path(active->dir.getPath()).parent_path();
     try {
          active->dir.change(path);
          active->DrawPath();
@@ -144,7 +150,9 @@ FMControl& FMControl::addBuffer(bool del) {
     return *this;
 }
 FMControl& FMControl::paste() {
+    if (active->dir.isBlock()) return *this; //Если виртуальная папка, ничего не выполняем
     if (!buf.getPaths().size()) return *this; //Если буфер пустой ничего не выполняем
+    
     Paste p(active->dir.getPath());
     p.paste(buf.getPaths());
     if (buf.getFlag()) {

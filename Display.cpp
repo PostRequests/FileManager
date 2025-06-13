@@ -69,7 +69,7 @@ Display& Display::Draw() {
 	n = (pa - pi + 1) - (n - pi + 1); //Количество циклов
 	for (int i = 0; i < n; i++)
 		x.printLn(std::string(needSize, ' '));
-	InfoFile info(dir.getPath() + "\\" + GetCur());
+	InfoFile info(dir.getPath() + "\\" + GetRegularFile());
 	x.printLn(std::string(needSize, '-'))
 		.printLn(std::string(needSize, ' '))
 		.prevLine()
@@ -118,6 +118,6 @@ Display& Display::down() {
 	return *this;
 }
 fs::path Display::GetFullPathElement() {
-	fs::path r = dir.getPath() / fs::path(GetCur());
+	fs::path r = dir.filePath(GetRegularFile()) / fs::path(GetRegularFile());
 	return r;
 }

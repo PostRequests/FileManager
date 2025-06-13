@@ -11,6 +11,14 @@ Dir& Dir::change(const std::string& path) {
 Dir& Dir::fill() {
 	list.clear();
 	for (auto pat : fs::directory_iterator(path)) 
-		list.push_back(pat.path().filename().string());
+		list[pat.path().filename().string()] = path;
 	return *this;
+}
+
+std::vector<std::string> Dir::getList() {
+	std::vector<std::string> r;
+	std::for_each(list.begin(), list.end(), [&](auto& i) {
+		r.push_back(i.first);
+		});
+	return r;
 }
