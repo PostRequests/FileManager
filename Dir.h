@@ -41,6 +41,7 @@ public:
 	}
 	/*Изменить текущий путь, сканирует список фалов*/
 	Dir& change(const std::string& path);
+	/*Изменить текущий путь, сканирует список фалов*/
 	inline Dir& change(const fs::path& path) { return change(path.string()); };
 	/*Возвращает текущий путь в формате string*/
 	inline std::string getPath() { return path.string(); }
