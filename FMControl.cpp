@@ -24,6 +24,7 @@ void FMControl::run() {
         case KEY::DEL: delActiveBuf(); break;
         case KEY::F6: goTo(); break;
         case KEY::F7: changeDisk(); break;
+        case KEY::F8: find(); break;
         case KEY::ESCAPE: exitFM(); break;
         }
     } while (true);
@@ -75,10 +76,10 @@ FMControl& FMControl::Up() {
     fs::path path;
     if (active->dir.isBlock()) {
         active->dir.unlock();
-        path = fs::path(active->dir.getPath());
+        active->dir.fill();
+        return *this;
     }
-    else 
-        path = fs::path(active->dir.getPath()).parent_path();
+    path = fs::path(active->dir.getPath()).parent_path();
     try {
          active->dir.change(path);
          active->DrawPath();
@@ -189,6 +190,12 @@ void FMControl::exitFM() {
 FMControl& FMControl::changeDisk() {
     ChangeDisk disc;
     active->dir.change(disc.disc());
-    draw();
+    update();
     return *this;
+}
+
+void FMControl::find() {
+    EnterBox mask("¬ведите критерий поиска");
+    active->dir.findByMask(mask.getString());
+    draw();
 }

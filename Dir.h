@@ -27,9 +27,9 @@ namespace fs = std::filesystem;
 class Dir
 {
 private:
-	fs::path path;
-	std::map<std::string, fs::path> list;
-	bool blockedPaste = false;
+	fs::path path; //Путь к текущей папке
+	std::map<std::string, fs::path> list; //Хранит список название файла: путь до файла
+	bool virt = false; //Является ли папка виртуальной
 	
 public:
 	
@@ -58,10 +58,12 @@ public:
 	/*Заполняет мап элементами*/
 	Dir& fill();
 	/*Проверяем, находиться ли директория в заблокированном пространстве от вставки*/
-	inline bool isBlock() { return blockedPaste; }
+	inline bool isBlock() { return virt; }
 	/*Блокируем при переходе в виртуальную папку*/
-	inline void block() { blockedPaste = true; }
+	inline void block() { virt = true; }
 	/*Разблокируем в нормальное состояние*/
-	inline void unlock() { blockedPaste = true; }
+	inline void unlock() { virt = true; }
+	/*производить поиск по маске (с поиском по подпапкам) */
+	void findByMask(const std::string mask);
 };
 

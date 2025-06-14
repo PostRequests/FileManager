@@ -21,6 +21,7 @@ KEY KeyBoard::getKey() {
     case 63:  return KEY::F5;
     case 64:  return KEY::F6;
     case 65:  return KEY::F7;
+    case 66:  return KEY::F8;
     case 32:  return KEY::SPACE;
     case 83:  return KEY::DEL;
     case 99:case 67: case 241: case 209: return KEY::C;

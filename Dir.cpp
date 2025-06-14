@@ -22,3 +22,19 @@ std::vector<std::string> Dir::getList() {
 		});
 	return r;
 }
+
+void Dir::findByMask(const std::string mask) {
+	std::string search = 
+		(mask[0] == '*')? mask.substr(1): mask;
+	list.clear();
+	for (const auto& e : fs::recursive_directory_iterator(path)) {
+		try {
+			if (e.path().filename().string().find(search) != std::string::npos) {
+				list[e.path().filename().string()] = e.path().parent_path();
+			}
+		} 
+		catch(...) {// Пропускаем проблемные элементы}
+		}
+	
+	}
+}

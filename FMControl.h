@@ -61,6 +61,8 @@ class FMControl
 	void exitFM();
 	/*Изменить корневой диск*/
 	FMControl& changeDisk();
+	/*Поиск*/
+	void find();
 public:
 	FMControl(): active(&dis1){
 		Position x;

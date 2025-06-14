@@ -20,6 +20,12 @@ void Display::reset() {
 	dir.fill();
 	Draw();
 }
+void Display::pires() {
+	cur = 0;
+	pi = 0;
+	pa = papa;
+	dir.fill();
+}
 void Display::resizeList(std::vector<std::string>& list) {
 	std::vector<std::string> buf = dir.buffer.getFileNames();
 	std::vector<int> alloc;
@@ -30,6 +36,11 @@ void Display::resizeList(std::vector<std::string>& list) {
 			alloc.push_back(i);
 	}
 	int needSize = box.width() -1; //Ширина текста помещающегося в бокс
+	//Добавляем + для папок
+	for (int i = 0; i < list.size(); i++) {
+		if (fs::is_directory(dir.filePath(list[i]) / list[i]))
+			list[i] = "+ " + list[i];
+	}
 	//Подготавливаем размер строк
 	for (int i = 0; i < list.size(); i++) {
 		if (list[i].size() < needSize)

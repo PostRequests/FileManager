@@ -61,6 +61,8 @@ public:
 	Display& down();
 	/*Сбрасывает контрольные точки cur pi pa*/
 	void reset();
+	/**/
+	void pires();
 	/*Возвращает имя текущего файла (string)*/
 	inline std::string GetRegularFile() {return dir.getList()[cur];	}
 	/*Возвращает путь к файлу целиком с названием файла*/

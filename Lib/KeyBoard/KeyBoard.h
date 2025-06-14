@@ -40,7 +40,8 @@ enum class KEY {
     C,
     X,
     V,
-    DEL
+    DEL,
+    F8
 };
 
 class KeyBoard
